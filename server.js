@@ -26,7 +26,7 @@ if (!fs.existsSync('uploads')) {
 }
 
 const photos = [];
-const PASSWORD = 'superstar';
+const PASSWORD = process.env.PASSWORD || 'superstar';
 
 app.post('/upload', upload.single('photo'), (req, res) => {
   const { password, caption } = req.body;
@@ -48,7 +48,6 @@ app.get('/photos', (req, res) => {
   res.json(photos);
 });
 
-// 🚨 DELETE route to handle photo removal
 app.delete('/delete', (req, res) => {
   const { password, filename } = req.body;
 
