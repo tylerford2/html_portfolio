@@ -9,12 +9,14 @@
   </head>
   <body>
     <button id="toggle-theme" class="toggle-theme">Too Boring? Click Me!</button>
+
     <header>
       <h1>Tyler Ford</h1>
       <p>Aspiring Software Engineer & Game Developer</p>
       <img src="images/photo_tyler.jpg" alt="Tyler Ford" class="profile-photo" />
       <p class="photo-caption">Hi, I’m Tyler 👋</p>
     </header>
+
     <nav>
       <ul>
         <li><a href="#about">About Me</a></li>
@@ -22,6 +24,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
     <section id="about">
       <h2>About Me</h2>
       <p class="center-text">
@@ -32,6 +35,7 @@
         At the same time, I’m drawn to the power of storytelling through technology. While I’m not a visual artist, I’m inspired by the idea of building immersive digital experiences that connect and move people. I'm excited to explore how software can be both useful and expressive.
       </p>
     </section>
+
     <section id="projects">
       <h2>Projects</h2>
       <div class="project-grid">
@@ -47,6 +51,7 @@
         </div>
       </div>
     </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <div class="contact-box">
@@ -59,23 +64,29 @@
             </a>
           </p>
         </div>
+
         <form id="contact-form" action="https://formspree.io/f/mkgbdrdg" method="POST">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
+
           <label for="email">Email:</label>
           <input type="email" id="email" name="_replyto" required />
+
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
+
           <button type="submit">Send</button>
         </form>
       </div>
     </section>
+
     <div id="modal" class="modal">
       <div class="modal-content">
         <p id="modal-text">Your message was sent successfully!</p>
         <button onclick="closeModal()">Close</button>
       </div>
     </div>
+
     <div id="cat-modal" class="modal">
       <div class="modal-content">
         <pre>
@@ -86,9 +97,11 @@
         <button onclick="closeCatModal()">Close</button>
       </div>
     </div>
+
     <footer>
       <p>&copy; 2023 Tyler Ford</p>
     </footer>
+
     <script src="js/script.js"></script>
   </body>
 </html>

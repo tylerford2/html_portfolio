@@ -1,6 +1,5 @@
 /* THEME VARIABLES */
 :root {
-  /* Light Theme */
   --background: #dcd4cd;
   --text: #3a2c23;
   --accent: #fa8072;
@@ -15,11 +14,10 @@
 }
 
 [data-theme="dark"] {
-  /* Dark Theme */
-  --background: #6c2761;        
-  --text: #732747;              
-  --accent: #e7628c;          
-  --brick: #c95a7d;             
+  --background: #6c2761;
+  --text: #732747;
+  --accent: #e7628c;
+  --brick: #c95a7d;
   --coral: #f88ca2;
   --mauve: #cc4c8a;
   --blush: #d293cc;
@@ -76,7 +74,6 @@ header {
   border: 2px solid var(--brick);
   border-radius: 12px;
   box-shadow: 0 4px 8px var(--shadow);
-  color: var(--text);
   text-align: center;
 }
 
@@ -146,13 +143,15 @@ section {
 
 /* PROJECT GRID */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
 }
 
 .project-card {
+  width: 300px;
+  text-align: center;
   border: 2px solid var(--brick);
   border-radius: 8px;
   padding: 20px;
@@ -165,16 +164,22 @@ section {
   transform: translateY(-5px);
 }
 
-/* CONTACT FORM */
+/* CONTACT SECTION */
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 form {
   background-color: var(--blush);
   border: 2px solid var(--brick);
   border-radius: 10px;
   padding: 20px;
   max-width: 600px;
-  margin: 40px auto 80px;
+  width: 100%;
+  margin: 40px auto;
   box-shadow: 0 8px 20px var(--shadow);
-  font-family: 'Courier Prime', monospace;
 }
 
 form label {
@@ -245,10 +250,12 @@ form button[type="submit"]:hover {
   display: none;
 }
 
+/* PHOTO DUMP + GALLERY */
 #photo-dump {
   padding: 2rem;
   background-color: var(--bg-secondary);
   border-top: 2px solid var(--border-color, #ccc);
+  text-align: center;
 }
 
 .upload-box {
@@ -262,28 +269,6 @@ form button[type="submit"]:hover {
 .upload-box textarea {
   padding: 0.5rem;
   font-family: inherit;
-}
-
-.photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.photo-gallery img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.photo-gallery .caption {
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-  color: var(--text-color);
-}
-
-#photo-dump {
-  padding: 2rem;
-  text-align: center;
 }
 
 .photo-gallery {
@@ -359,12 +344,13 @@ footer {
   }
 
   .project-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   form {
     width: 100%;
     padding: 20px;
+    margin: 20px auto;
   }
 
   .project-card {
@@ -380,29 +366,4 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
-}
-/* Add to the bottom of your CSS file */
-
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.contact-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact-links {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-/* These additions override previous grid or block-only definitions */
-.project-card {
-  width: 300px;
-  text-align: center;
 }
