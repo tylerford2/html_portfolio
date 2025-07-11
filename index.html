@@ -9,33 +9,36 @@
   </head>
   <body>
     <button id="toggle-theme" class="toggle-theme">Too Boring? Click Me!</button>
+
     <header>
       <h1>Tyler Ford</h1>
       <p>Aspiring Software Engineer & Game Developer</p>
       <img src="images/photo_tyler.jpg" alt="Tyler Ford" class="profile-photo" />
       <p class="photo-caption">Hi, I’m Tyler 👋</p>
     </header>
+
     <nav>
       <ul>
         <li><a href="#about">About Me</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#photo-gallery-section">Photos</a></li>
       </ul>
     </nav>
+
     <section id="about">
       <h2>About Me</h2>
       <p class="center-text">
-  I'm a multidisciplinary professional currently transitioning into software engineering after years of hands-on experience in door-to-door sales, catering, and childcare. These experiences shaped me into someone who is adaptable, communicative, and grounded in real-world problem-solving.
-  <br><br>
-  As a student at WGU, I’ve been building a technical foundation while drawing from my background in people-centered work. I’m passionate about how software can make everyday life easier—whether by improving workflows, creating better user experiences, or solving small but meaningful problems.
-  <br><br>
-  At the same time, I’m drawn to the power of storytelling through technology. While I’m not a visual artist, I’m inspired by the idea of building immersive digital experiences that connect and move people. I'm excited to explore how software can be both useful and expressive.
-</p>
-
+        I'm a multidisciplinary professional currently transitioning into software engineering after years of hands-on experience in door-to-door sales, catering, and childcare. These experiences shaped me into someone who is adaptable, communicative, and grounded in real-world problem-solving.
+        <br /><br />
+        As a student at WGU, I’ve been building a technical foundation while drawing from my background in people-centered work. I’m passionate about how software can make everyday life easier—whether by improving workflows, creating better user experiences, or solving small but meaningful problems.
+        <br /><br />
+        At the same time, I’m drawn to the power of storytelling through technology. While I’m not a visual artist, I’m inspired by the idea of building immersive digital experiences that connect and move people. I'm excited to explore how software can be both useful and expressive.
+      </p>
     </section>
+
     <section id="projects">
       <h2>Projects</h2>
+      <!-- 💡 Try pressing the "T" key 3 times on your keyboard -->
       <div class="project-grid">
         <div class="project-card">
           <h3>My First Website</h3>
@@ -49,6 +52,7 @@
         </div>
       </div>
     </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <div class="contact-box">
@@ -62,30 +66,16 @@
         <form id="contact-form" action="https://formspree.io/f/mkgbdrdg" method="POST">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
+
           <label for="email">Email:</label>
           <input type="email" id="email" name="_replyto" required />
+
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
+
           <button type="submit">Send</button>
         </form>
       </div>
-    </section>
-
-    <!-- Upload Modal (Hidden Feature) -->
-    <div id="upload-modal" class="modal">
-      <div class="modal-content">
-        <h3>Upload to Photo Dump</h3>
-        <input type="password" id="upload-password" placeholder="Enter password" />
-        <input type="file" id="photo-file" accept="image/*" />
-        <textarea id="photo-caption" placeholder="Write a caption (max 255 characters)" maxlength="255"></textarea>
-        <button onclick="submitPhoto()">Upload</button>
-        <button onclick="closeUploadModal()">Cancel</button>
-      </div>
-    </div>
-
-    <section id="photo-gallery-section">
-      <h2>📸 Photos</h2>
-      <div id="photo-gallery" class="photo-gallery"></div>
     </section>
 
     <div id="modal" class="modal">
@@ -109,6 +99,7 @@
     <footer>
       <p>&copy; 2023 Tyler Ford</p>
     </footer>
+
     <script src="js/script.js"></script>
   </body>
 </html>

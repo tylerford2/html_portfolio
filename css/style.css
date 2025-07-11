@@ -133,7 +133,6 @@ a {
   transition: color 0.2s ease;
 }
 
-
 /* SECTION STYLES */
 section {
   max-width: 850px;
@@ -240,6 +239,7 @@ form button[type="submit"]:hover {
   text-align: center;
   box-shadow: 0 4px 10px var(--shadow);
 }
+
 .hidden {
   display: none;
 }
@@ -279,6 +279,7 @@ form button[type="submit"]:hover {
   margin-top: 0.25rem;
   color: var(--text-color);
 }
+
 #photo-dump {
   padding: 2rem;
   text-align: center;
@@ -303,6 +304,7 @@ form button[type="submit"]:hover {
   font-size: 0.9rem;
   color: #555;
 }
+
 #photos-section {
   margin: 60px auto;
   max-width: 850px;
@@ -334,5 +336,14 @@ form button[type="submit"]:hover {
   margin-top: 10px;
   color: var(--text);
   font-style: italic;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: var(--text);
 }
 
