@@ -1,15 +1,16 @@
 # Tyler Ford – HTML Portfolio 🚀
 
-![My First HTML Portfolio](My%20First%20HTML%20Portfolio.png)
+[![👉 Click the thumbnail to watch the video!](https://img.youtube.com/vi/8_XKCJlBmWU/hqdefault.jpg)](https://youtu.be/8_XKCJlBmWU)
 
-📺 **Watch the Demo**  
-[![Watch on YouTube](https://img.youtube.com/vi/8_XKCJlBmWU/hqdefault.jpg)](https://youtu.be/8_XKCJlBmWU)
+**🎥 Watch the Demo**  
+https://youtu.be/8_XKCJlBmWU
 
-🖥️ **Live Site:**  
-🔗 https://tylerford2.github.io/html_portfolio/
+**🌐 Live Site:**  
+https://tylerford2.github.io/html_portfolio/
 
-📂 **Repository:**  
-🔗 https://github.com/tylerford2/html_portfolio
+**📂 Repository:**  
+https://github.com/tylerford2/html_portfolio
+
 
 ---
 
