@@ -1,153 +1,243 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* THEME VARIABLES */
 :root {
-  --background: #ffe4e1;
-  --text: #2d2d2d;
-  --primary: #b22222;
-  --secondary: #f08080;
+  /* Light Theme */
+  --background: #dcd4cd;
+  --text: #3a2c23;
   --accent: #fa8072;
-  --rose: #c56c7b;
-  --blush: #f9d5d3;
-  --shadow: rgba(0, 0, 0, 0.1);
-  --mauve: #e38aa1;
   --brick: #a34343;
   --coral: #ff6f61;
+  --mauve: #e38aa1;
+  --blush: #fbe4d8;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --link-color: #d36c8c;
+  --card-bg: #e9d2d2;
+  --border-color: #a94456;
 }
 
-/* Body and Font */
+[data-theme="dark"] {
+  /* Dark Theme */
+  --background: #6c2761;        
+  --text: #732747;              
+  --accent: #e7628c;          
+  --brick: #c95a7d;             
+  --coral: #f88ca2;
+  --mauve: #cc4c8a;
+  --blush: #d293cc;
+  --shadow: rgba(255, 255, 255, 0.1);
+  --link-color: #c43e81;
+  --card-bg: #ae7aa0;
+  --border-color: #ff7cab;
+}
+
+/* GLOBAL STYLES */
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier Prime', monospace;
   background-color: var(--background);
   color: var(--text);
   line-height: 1.6;
-  padding: 60px 20px 20px;
-  position: relative;
+  padding: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Toggle Theme Button */
-#toggle-theme {
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEADINGS & PARAGRAPHS */
+h1, h2, h3, section p {
+  text-align: center;
+}
+
+/* TOGGLE BUTTON */
+.toggle-theme {
   position: fixed;
-  top: 15px;
+  top: 20px;
   right: 20px;
-  background-color: var(--rose);
+  background-color: var(--mauve);
   border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: white;
+  color: rgb(234, 216, 236);
   font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
   cursor: pointer;
   z-index: 1000;
 }
 
-h1, h2, h3, p, footer {
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: var(--blush);
+  border: 2px solid var(--brick);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow);
+  color: var(--text);
   text-align: center;
 }
 
-nav {
-  margin: 30px 0;
-  border-top: 2px solid var(--brick);
-  border-bottom: 2px solid var(--brick);
-  padding: 10px 0;
+header h1 {
+  font-size: 2rem;
+  margin: 0 0 10px;
 }
 
+header p {
+  margin: 5px 0 15px;
+  font-size: 1rem;
+}
+
+/* PROFILE PHOTO */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--mauve);
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+/* NAVIGATION */
 nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  list-style: none;
+  gap: 25px;
+  margin: 30px 0;
+  padding: 10px 0;
+  border-top: 2px solid var(--brick);
+  border-bottom: 2px solid var(--brick);
 }
 
 nav a {
-  color: var(--brick);
   text-decoration: none;
+  color: var(--brick);
   font-weight: bold;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
-  background-color: var(--rose);
-  color: white;
-  border-radius: 5px;
+  color: var(--coral);
+  transform: scale(1.05);
 }
 
-.profile-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border: 4px solid var(--mauve);
-  margin: 20px auto;
-  object-fit: cover;
+/* LINKS */
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+
+/* SECTION STYLES */
+section {
+  max-width: 850px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
   box-shadow: 0 4px 8px var(--shadow);
-  display: block;
 }
 
+/* PROJECT GRID */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding-top: 20px;
 }
 
 .project-card {
-  border: 2px solid var(--rose);
+  border: 2px solid var(--brick);
   border-radius: 8px;
   padding: 20px;
   background-color: var(--blush);
   box-shadow: 0 2px 6px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px var(--shadow);
 }
 
-.project-card a {
-  color: var(--brick);
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.project-card a:hover {
-  color: var(--coral);
-}
-
-/* Contact Form Container */
-#contact form {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
+/* CONTACT FORM */
+form {
   background-color: var(--blush);
-  border: 2px solid var(--rose);
+  border: 2px solid var(--brick);
   border-radius: 10px;
-  box-shadow: 0 4px 8px var(--shadow);
+  padding: 20px;
+  max-width: 600px;
+  margin: 40px auto 80px;
+  box-shadow: 0 8px 20px var(--shadow);
+  font-family: 'Courier Prime', monospace;
 }
 
 form label {
   display: block;
-  margin: 10px 0 5px;
+  margin: 12px 0 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--brick);
 }
 
 form input,
 form textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid var(--mauve);
-  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid var(--brick);
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+  box-sizing: border-box;
 }
 
-form button {
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+form button[type="submit"] {
+  margin-top: 20px;
   padding: 10px 20px;
-  background-color: var(--brick);
+  font-weight: bold;
+  font-size: 1rem;
   color: white;
+  background-color: var(--brick);
   border: none;
-  border-radius
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #8c2e2e;
+}
+
+/* MODAL POPUP */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
