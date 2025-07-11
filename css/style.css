@@ -1,3 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+.project-card,
+form,
+.contact-box,
+section,
+.photo-card,
+.modal-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 /* THEME VARIABLES */
 :root {
   --background: #dcd4cd;
