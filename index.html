@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyler's Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Single Toggle Theme Button -->
+  <button id="toggle-theme">🌙 Toggle Theme</button>
+
+  <header>
+    <h1 style="text-align: center;">Tyler Ford</h1>
+    <p style="text-align: center;">Aspiring Software Engineer & Game Developer</p>
+    <img src="images/photo_tyler.jpg" alt="Tyler Ford" class="profile-photo">
+    <p class="photo-caption" style="text-align: center;">Hi, I’m Tyler 👋</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2 style="text-align: center;">About Me</h2>
+    <p>I'm currently studying Software Engineering at WGU and learning web and game development.</p>
+  </section>
+
+  <section id="projects">
+    <h2 style="text-align: center;">Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>My First Website</h3>
+        <p>A simple HTML/CSS page to showcase what I've learned.</p>
+        <a href="#">View Code</a>
+      </div>
+      <div class="project-card">
+        <h3>Coming Soon</h3>
+        <p>A placeholder for my next amazing creation!</p>
+        <a href="#">Check back later</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="text-align: center;">Contact</h2>
+    <p>Email: <a href="mailto:mstylerashleyford@gmail.com">mstylerashleyford@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/tylerford2" target="_blank">tylerford2</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/tyler-ashley-ford-5866a628b/" target="_blank">tyler-ashley-ford</a></p>
+
+    <form id="contact-form" action="https://formspree.io/f/mkgbdrdg" method="POST">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="_replyto" required /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p style="text-align: center;">&copy; 2023 Tyler Ford</p>
+  </footer>
+
+  <!-- Modals -->
+  <div id="modal" class="modal">
+  <div class="modal-content">
+    <p id="modal-text">Your message was sent successfully!</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<div id="cat-modal" class="modal">
+  <div class="modal-content">
+    <pre>
+ /\_/\
+( o.o )
+ > ^ <
+    </pre>
+    <p>Meow! You found the hidden cat 🐾</p>
+    <button onclick="closeCatModal()">Close</button>
+  </div>
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
