@@ -4,13 +4,25 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/uploads', express.static('uploads'));
 
+// Serve static files from root
+app.use(express.static(__dirname));
+
+// Serve uploads folder
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Ensure uploads directory exists
+if (!fs.existsSync('uploads')) {
+  fs.mkdirSync('uploads');
+}
+
+// Multer config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'uploads/');
@@ -21,12 +33,20 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-if (!fs.existsSync('uploads')) {
-  fs.mkdirSync('uploads');
-}
-
-const photos = [];
+// Password
 const PASSWORD = process.env.PASSWORD || 'superstar';
+
+// In-memory photo store
+const photos = [];
+
+// Routes
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/photos', (req, res) => {
+  res.json(photos);
+});
 
 app.post('/upload', upload.single('photo'), (req, res) => {
   const { password, caption } = req.body;
@@ -42,10 +62,6 @@ app.post('/upload', upload.single('photo'), (req, res) => {
   };
   photos.push(newPhoto);
   res.json({ message: 'Photo uploaded successfully', photo: newPhoto });
-});
-
-app.get('/photos', (req, res) => {
-  res.json(photos);
 });
 
 app.delete('/delete', (req, res) => {
@@ -71,6 +87,7 @@ app.delete('/delete', (req, res) => {
   });
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
