@@ -149,6 +149,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 
 .project-card {
@@ -347,3 +348,36 @@ footer {
   color: var(--text);
 }
 
+/* MOBILE-FRIENDLY RESPONSIVENESS */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .project-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  input, textarea {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
