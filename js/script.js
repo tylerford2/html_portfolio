@@ -1,51 +1,52 @@
-// Toggle Theme
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton = document.getElementById('toggle-theme');
+document.addEventListener("DOMContentLoaded", () => {
+  // Theme toggle
+  const toggleButton = document.getElementById("toggle-theme");
 
-  toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
+  toggleButton.addEventListener("click", () => {
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute("data-theme");
+    root.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
   });
 
-  // Contact Form Popup
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', function (e) {
+  // Form submission modal
+  const form = document.getElementById("contact-form");
+  const modal = document.getElementById("modal");
+
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    const modal = document.getElementById('modal');
-    modal.style.display = 'block';
+    modal.style.display = "flex";
     form.reset();
   });
 
-  // Close Modals
+  // Close modals
   window.closeModal = function () {
-    document.getElementById('modal').style.display = 'none';
-  };
-  window.closeCatModal = function () {
-    document.getElementById('cat-modal').style.display = 'none';
+    modal.style.display = "none";
   };
 
-  // "t" key Easter Egg Trigger (3 times)
+  window.closeCatModal = function () {
+    const catModal = document.getElementById("cat-modal");
+    catModal.style.display = "none";
+  };
+
+  // T key Konami-style trigger
   let tPressCount = 0;
   let tTimer = null;
 
-  document.addEventListener('keydown', function (e) {
-    if (e.key.toLowerCase() === 't') {
+  document.addEventListener("keydown", function (e) {
+    if (e.key.toLowerCase() === "t") {
       tPressCount++;
-
-      // Reset after 2 seconds of inactivity
       clearTimeout(tTimer);
-      tTimer = setTimeout(() => {
-        tPressCount = 0;
-      }, 2000);
 
       if (tPressCount === 3) {
-        const catModal = document.getElementById('cat-modal');
-        if (catModal) {
-          catModal.style.display = 'block';
-        }
+        const catModal = document.getElementById("cat-modal");
+        catModal.style.display = "flex";
         tPressCount = 0;
+      } else {
+        tTimer = setTimeout(() => {
+          tPressCount = 0;
+        }, 1500); // Reset after 1.5s
       }
     } else {
-      // Any other key resets the count
       tPressCount = 0;
     }
   });
