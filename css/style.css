@@ -172,7 +172,15 @@ section {
   box-shadow: 0 2px 6px var(--shadow);
   transition: transform 0.3s ease;
 }
-
+.project-card a {
+  display: block;        /* Stack links vertically */
+  margin-bottom: 10px;   /* Space between links */
+  text-decoration: none; /* Optional: remove underline */
+  color: var(--brick);   /* Optional: match your color theme */
+}
+.project-card a:last-child {
+  margin-bottom: 0;
+}
 .project-card:hover {
   transform: translateY(-5px);
 }
